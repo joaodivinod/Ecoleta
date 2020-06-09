@@ -1,86 +1,89 @@
-#modal{
-    background-color: #0E0A41Ef;
-
-    height: 100vh;
+#modal {
     width: 100vw;
-
+    height: 100vh;
     position: fixed;
-    top:0;
-
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: 400ms;
+    background: #0E0A15ef;
 }
 
-#modal .content{
-    color: #fff;
-    width: 420px;
-
-}
-#modal.hide{
+#modal.hide {
     display: none;
 }
-#modal .header{
+
+#modal .content {
+    color: #fff;
+    width: 420px;
+}
+
+#modal .header {
+    margin-bottom: 42px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 48px;
-
 }
 
-#modal .header a{
-    background-image: url("../img/x.svg");
+#modal .header a {
     width: 20px;
     height: 20px;
-
-    display: flex;
-
     font-size: 0.01px;
+    display: flex;
+    background: url(../assets/x.svg);
 }
 
-#modal .header h1{
+#modal .header h1 {
     color: #fff;
-
     font-size: 36px;
     line-height: 42px;
-
 }
 
-#modal form label{
+#modal form label {
     font-size: 14px;
     line-height: 16px;
-    display: block;
     margin-bottom: 8px;
+    display: block;
 }
 
-#modal form .field{
+#modal form .field {
     display: flex;
 }
 
-#modal form input{
-    flex: 1;
-    background: #f0f0f5;
-    border-radius: 8px 0 0 8px;
-    border:none;
-    padding: 16px 24px;
-
+#modal form input {
+    color: #6c6c80;
     font-size: 16px;
-
-    color: #c6c680;
+    border-radius: 15px 0 0 15px;
+    border: 0;
+    padding: 16px 24px;
+    outline: none;
+    flex: 1;
+    background: var(--bg);
 }
 
-#modal form button{
+#modal form button {
     width: 72px;
     height: 72px;
-    background-color: var(--primary-color);
     border: 0;
-    border-radius:0 8px 8px 0px;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    background: var(--green);
 }
 
-#modal form button:hover{
-    background-color:#2fb85e;
-    cursor: pointer;
-    transition: 400ms;
+#modal form button:hover {
+    background: #2fb85e;
+}
+
+
+/* Cadastro concluído modal */
+#modal.point .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal.point h1 {
+    color: #fff;
+    margin-top: 32px;
 }
