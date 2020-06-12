@@ -1,51 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">    
+{% extends "layout.html" %}
+
+{% set pageId = "page-search-results" %}
+
+{% block title %}
     <title>Resultado da pesquisa</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/search-results.css">
-    <link rel="stylesheet" href="css/responsive.css">
+
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/search-results.css">
+
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <main>
+
+    {% if total > 0 %}
+
+        <h4>
+            <strong>{{total}} pontos</strong>
+            encontrados
+        </h4>
+
+        <div class="cards">
 
 
+            {% for place in places %}
 
-</head>
-<body>
-    <div id="page-search-results">
-             <header>
-               <img src="img/logo.svg" alt="">
-           
-               <a href="/"> 
-                    <span></span>
-                    Voltar para home
-               </a>
-             </header>
-
-            <main>
-                <h4>
-                    <strong>2 Pontos</strong>Encontrados
-                </h4>
-                <div class="cards">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1481761289552-381112059e05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1461&q=80" alt="Colectoria">
-                        <h1>Colectoria</h1>
-                        <h3>Residuos eletronicos, lanpadas</h3>
-                        <p>Rua Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80" alt="Colectoria">
-                        <h1>pappersider</h1>
-                        <h3>Residuos eletronicos, lanpadas</h3>
-                        <p>Rua Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-                    </div>
-
+                <div class="card">
+                    <img src="{{ place.image }}" alt="{{ place.name }}">
+                    <h1>{{ place.name }}</h1>
+                    <h3>{{ place.items }}</h3>
+                    <p>
+                        {{ place.city }}, {{ place.state }}
+                        <br/>
+                        {{ place.address }}
+                        <br/>
+                        {{ place.address2 }}
+                    </p>
                 </div>
-            </main>
-      
-    </div>
 
-</body>
-</html>
+            {% endfor %}
+
+        </div>
+    
+    {%else%}
+
+        <h4><strong>Nenhum</strong> local encontrado</h4>
+    
+    {% endif %}
+
+        
+    </main>
+{% endblock content %}

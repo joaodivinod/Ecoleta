@@ -1,5 +1,3 @@
-<<<<<<< HEAD:public/js/index.js
-// fazendo o modal funcionar
 const buttonSearch = document.querySelector("#page-home main a")
 const modal = document.querySelector("#modal")
 const close = document.querySelector("#modal .header a")
@@ -11,5 +9,4 @@ buttonSearch.addEventListener("click", () => {
 close.addEventListener("click", () => {
     modal.classList.add("hide")
 })
-=======
->>>>>>> parent of 8798824... search-results terminada:js/index.js
+

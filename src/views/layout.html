@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <!-- Requiered Meta Tags-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    {% block title %}
         <title>Ecoleta</title>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">       
-        <!-- Stylesheet -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-        <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-        </head>
-        <body>
-
-        {% block styles %} 
-        {% endblock styles %}
+    {% endblock title %}
 
 
-        <div id="{{ pageId }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/main.css">
+
+    {% block styles %}
+    {% endblock styles %}
+
+
+    <link rel="stylesheet" href="/styles/responsive.css">
+</head>
+<body>
+
+    <div id="{{ pageId }}">
         {% block content %}
         {% endblock content %}
-        </div>
+    </div>
 
-        {% block modal %}
-        {% endblock modal %}
+    {% block modal %}
+    {% endblock modal %}
 
-        {% block scripts %}
-        {% endblock scripts %}
-
-    </body>
-    </html>
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+</html>

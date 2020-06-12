@@ -1,28 +1,12 @@
 {
-  "name": "Ecoleta",
-  "version": "1.0.0",
-  "description": "Projeto desenvolvido durante a NLW",
-  "main": "src/server.js",
+  "name": "nlw",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joaodivinod/Ecoleta.git"
-  },
-  "keywords": [],
-  "author": "João Divino",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joaodivinod/Ecoleta/issues"
-  },
-  "homepage": "https://github.com/joaodivinod/Ecoleta#readme",
   "dependencies": {
-    "3": "^2.1.0",
     "express": "^4.17.1",
     "nunjucks": "^3.2.1",
-    "sqlite": "^4.0.11"
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
